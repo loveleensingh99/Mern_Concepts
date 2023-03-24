@@ -25,9 +25,16 @@ app.get("/", (req, res) => {
   res.send("Home");
 });
 
-app.get("/about", middleware, (req, res) => {
-  res.send("About");
-});
+// app.get("/about", middleware, (req, res) => {
+//   res.send("About");
+// });
+
+
+
+
+
+
+
 
 app.get("/contact", (req, res) => {
   res.send("contact");
@@ -41,6 +48,6 @@ app.get("/signup", (req, res) => {
   res.send("signup");
 });
 
-app.listen(3002, () => {
+app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`);
 });
