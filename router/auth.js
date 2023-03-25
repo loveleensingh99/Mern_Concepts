@@ -4,6 +4,10 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../database/model/userSchema");
+const authenticate = require("../middleware/authenticate");
+const cookieParser = require("cookie-parser");
+
+router.use(cookieParser());
 
 router.get("/", (req, res) => {
   res.send(`Hello from the server app.js`);
@@ -106,7 +110,6 @@ router.post("/login", async (req, res) => {
 // About Us Page
 
 router.get("/about", authenticate, (req, res) => {
-  console.log("About Page open");
   res.send(req.rootUser);
 });
 
